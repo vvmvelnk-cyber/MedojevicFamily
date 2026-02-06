@@ -2936,12 +2936,12 @@ const pEls = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10, p11,p12,p13,p14,p15,p16,p17,p18,
 
 const aPs = [
         [1,     1, "Nikola", "Medojević",       0, 0, 0, 0, 0, 0],
-        [2,     1, "?",         "?",            1,  4600, 4800],
+        [2,     1, "?",         "?",            1,  0, 0],
         [3,     2, "Pavle", "Medojević",        0, 0, 0, 0,1,2],
         [4,     2, "?", "?",                    1, 0, 0],
-        [5,     3, "Radosav", "Medojević",      0, 	5797.0,	5027.6, 1,3,4],
-        [6,     3, "?", "?",                    1, 	5804.0,	5056.7],
-        [7,     3, "Lala", "Medojević",         0,	5804.0,	5353.3, 1,3,4],
+        [5,     3, "Radosav", "Medojević",      0, 	0,	0, 1,3,4],
+        [6,     3, "?", "?",                    1, 	0,	0],
+        [7,     3, "Lala", "Medojević",         0,	0,	0, 1,3,4],
         [8,     3, "?", "?",                    1, 	5797.0,	5382.4],        
         [9,     4,  "Pavle",    "Medojević",    0, 	652.7,	321.5,  3,5,6],
         [10,    4, "?",        "Ašanin",       1, 	655.1,	337.3],
@@ -6710,10 +6710,10 @@ function foundPerson() {
                     foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(majka: "
                         + findFatherName(n) + ")");
                 } else if (aPs[n][4] === 0 || aPs[n][4] === 2) {
-                    foundPersons.push(" " + aPs[n][0] + " " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
+                    foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
                         + findFatherName(n) + ")"); 
                 } else {
-                    foundPersons.push(" " + aPs[n][0] + " " + aPs[n][2] + " " + aPs[n][3]);
+                    foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]);
                 }
             } 
         } else if (searchInput1.value === "" && foundPersons2.length > 0) {
@@ -6726,7 +6726,7 @@ function foundPerson() {
                 xTarr.push(wWidth/2 - aPs[n][5]);
                 yTarr.push(wHeight/2 - aPs[n][6]);
                 if (aPs[n][4] === 0 || aPs[n][4] === 2) {
-                    foundPersons.push(" " + aPs[n][0] + " " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
+                    foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
                         + findFatherName(n) + ")"); 
                 } else {
                     foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]);
@@ -6745,7 +6745,7 @@ function foundPerson() {
                             foundPersons.push(" " + aPs[n][0] + " " + aPs[n][2] + " " + aPs[n][3]  + " " + "(majka: "
                                 + findFatherName(n) + ")");
                         } else if (aPs[n][4] === 0 || aPs[n][4] === 2) {
-                            foundPersons.push(" " + aPs[n][0] + " " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
+                            foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
                                 + findFatherName(n) + ")"); 
                         } else {
                             foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]);
