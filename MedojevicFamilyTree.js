@@ -6523,6 +6523,9 @@ function labelsDesign() {
 
 labelsDesign();
 
+const god = document.getElementById("godina");
+god.setAttribute("style", `left: ${aPs[0][5] + 55}px; top: ${aPs[0][6] - 70}px`);
+
 const canvas = document.body.querySelector("#myCanvas");
 const ctx = canvas.getContext('2d');
 
