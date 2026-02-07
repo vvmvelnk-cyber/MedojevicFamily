@@ -6764,9 +6764,13 @@ function foundPerson() {
  
 function findFatherName(i) {
     let k = aPs[i][8];
-    for (let j = 0; j <aPs.length; j++) {
+    let fatherName = "-";
+    if (k===0){
+                return fatherName;
+            }
+    for (let j = 1; j <aPs.length; j++) {
         if (aPs[j][0] === k) {
-            let fatherName = aPs[j][2];
+            fatherName = aPs[j][2];
             return fatherName;
         }
     }    
