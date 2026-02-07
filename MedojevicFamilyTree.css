@@ -268,8 +268,7 @@ hr {
 
 #img_title1, #img_title2, #img_title3 {
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     align-items: center;
     justify-items: center;
 }
@@ -277,11 +276,11 @@ hr {
 img {
     margin-top: 20px;    
 }
-
+/*
 img:nth-of-type(1), img:nth-of-type(2) {
-    margin-right: .5%;
+    margin-right: 2px;
 }
-
+*/
 i {
     position: relative;
     font-size: 16px;
