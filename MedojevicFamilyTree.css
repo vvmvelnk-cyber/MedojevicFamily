@@ -12,7 +12,7 @@ body {
 }
 
 #head {
-    height: 125px;
+    height: 112px;
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -40,7 +40,8 @@ body {
 }
 
 #title {
-    font-size: 50px;
+    font-size: 40px;
+    margin-top: -5px;
     text-align: center;
     justify-content: center;
     color: darkblue;
@@ -159,7 +160,7 @@ hr {
 #notes {
     position: absolute;
     right: 2vw;
-    top: 65px;
+    top: 70px;
     width: 440px;
     align-items: center;
     justify-content: center;
@@ -408,16 +409,16 @@ h2 {
     color: #999;
 }
 
-@media screen and (min-width: 400px) and (max-width: 2000px) {
+@media screen and (min-width: 400px) and (max-width: 900px) {
     #head {
         height: 105px;
+        margin-top: 0;
     }
     #title { 
     font-size: 32px;
     }
-   /* #notes {
-        top: 65px;
-       left: 15px; 
-    }*/
+   #notes {
+        top: 60px;
+    }
 }
 

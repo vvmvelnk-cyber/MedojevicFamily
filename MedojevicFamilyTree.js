@@ -2776,6 +2776,7 @@ const p2775 = document.getElementById("prs2775");
 const p2776 = document.getElementById("prs2776");
 const p2777 = document.getElementById("prs2777");
 const p2778 = document.getElementById("prs2778");
+const p2779 = document.getElementById("prs2779");
 
 const pEls = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10, p11,p12,p13,p14,p15,p16,p17,p18,
     p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30, p31,p32,p33,p34,p35,p36,p37,p38,
@@ -2939,7 +2940,7 @@ const pEls = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10, p11,p12,p13,p14,p15,p16,p17,p18,
     p2727,p2728,p2729,p2730,p2731,p2732,p2733,p2734,p2735,p2736,p2737,p2738,p2739,p2740,p2741,p2742,
     p2743,p2744,p2745,p2746,p2747,p2748,p2749,p2750,p2751,p2752,p2753,p2754,p2755,p2756,p2757,p2758,
     p2759,p2760,p2761,p2762,p2763,p2764,p2765,p2766,p2767,p2768,p2769,p2770,p2771,p2772,p2773,p2774,
-    p2775,p2776,p2777,p2778
+    p2775,p2776,p2777,p2778,p2779
 ];
 
 const aPs = [
@@ -3931,7 +3932,7 @@ const aPs = [
         [981,	9,	"?",	"Ergorac",	3,  	3830.8,	1856.6],
         [982,	9,	"Radoslav - Miško",	"Medojević",	0, 	3854.7,	1849.4, 142,	412,	413],
         [983,	9,	"Vesna",	"Ćirić",	1,  	3870.0,	1844.9],
-        [984,	9,	"Dragoslav - Lola*",	"Medojević",	0,  	3890.1,	1839.1, 142,	412,	413],
+        [984,	9,	"Dragoslav - Lala*",	"Medojević",	0,  	3890.1,	1839.1, 142,	412,	413],
         [985,	9,	"Jovanka",	"Amidžić",	1, 	3905.5,	1834.8],
         [986,	9,	"Radonja - Mijo",	"Medojević",	0,  	3925.5,	1829.3, 142,	412,	413],
         [987,	9,	"Marija",	"Đorđević",	1,  	3941.0,	1825.1],
@@ -4969,7 +4970,7 @@ const aPs = [
 [2014,	10,	'Jovana'	,	'Medojević'	,	2	,0,0,	540	,	1166	,	1167	],
 [2015,	10,	'?'	,	'?'	,	3	,0,0		],
 [2016,	10,	'Jelena'	,	'Medojević'	,	2	,0,0,	540	,	1166	,	1167	],
-[2017,	10,	'Tamara'	,	'Medojević'	,	2	,0,0,	540	,	1166	,	1167	],
+[201601,	10,	'?'	,	'?'	,	3	,0,0		],[2017,	10,	'Tamara'	,	'Medojević'	,	2	,0,0,	540	,	1166	,	1167	],
 [2018,	10,	'Matija'	,	'Medojević'	,	0	,0,0,	540	,	1168	,	1169	],
 [2019,	10,	'Tijana'	,	'Medojević'	,	2	,0,0,	540	,	1168	,	1169	],
 [2020,	10,	'Stefan'	,	'Medojević',	0	,0,0,	542	,	1170	,	1171	],
@@ -6813,7 +6814,7 @@ function backgroundColor(i) {
     }
     
         if (aPs[i][4]===1 && aPs[i+1][4]===1 && aPs[i][1] >= 9) {
-            return "#99b"; //#77a
+            return "#668";
         } 
         
         if(aPs[i][4]===1) {
