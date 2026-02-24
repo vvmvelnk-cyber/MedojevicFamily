@@ -2954,7 +2954,7 @@ const aPs = [
         [8,     3, "?", "?",                    1, 	5797.0,	5382.4],        
         [9,     4,  "Pavle",    "Medojević",    0, 	652.7,	321.5,  3,5,6],
         [10,    4, "?",        "Ašanin",       1, 	655.1,	337.3],
-        [11,    4, "Milisav",  "Medojević",    0, 	657.8,	361.5,  3,5,6],
+        [11,    4, "Milisav*",  "Medojević",    0, 	657.8,	361.5,  3,5,6],
         [12,    4, "?",        "?",            1, 	659.0,	377.5],
         [13,    4, "Bracan",   "Medojević",    0, 	660.0,	401.8,  3,5,6],
         [14,    4, "?",        "?",            1, 	660.0,	417.8],
@@ -6918,33 +6918,29 @@ cancel2El.addEventListener('click', () => {
     addressEl.style.display = 'none';
 });
 
+const p11TextEl = document.getElementById('p11Text');
 const p137TextEl = document.getElementById('p137Text');
 const p220TextEl = document.getElementById('p220Text');
 const p1051TextEl = document.getElementById('p1051Text');
 const personalDataEl = document.getElementById('personalDataEl');
 const homeTextEl = document.getElementById('homeText');
-//const a137El = document.getElementById('a137');
-//const a220El = document.getElementById('a220');
 const nazad1El = document.getElementById('nazad1');
 const nazad2El = document.getElementById('nazad2');
 const nazad3El = document.getElementById('nazad3');
+const nazad4El = document.getElementById('nazad4');
 
 nazad1El.addEventListener('click', () => {
     window.scrollTo(0, 0);
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'block';
-    //p137TextEl.style.display = 'block';
-    //p220TextEl.style.display = 'block';
     homeEl.style.width = 'wWidth';
     homeEl.style.top = '110px';
 });
 nazad2El.addEventListener('click', () => {
     window.scrollTo(0, 0);
-    //homeEl.style.top = - homeEl.offsetHeight*0.346 + 'px';
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'block';
     p137TextEl.style.display = 'block';
-    //p220TextEl.style.display = 'block';
     homeEl.style.width = 'wWidth';
     homeEl.style.top = '110px';
 });
@@ -6952,8 +6948,13 @@ nazad3El.addEventListener('click', () => {
     window.scrollTo(0, 0);
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'block';
-    p137TextEl.style.display = 'block';
-    p220TextEl.style.display = 'block';
+    homeEl.style.width = 'wWidth';
+    homeEl.style.top = '110px';
+});
+nazad4El.addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    homeEl.style.display = 'block';
+    homeTextEl.style.display = 'block';
     homeEl.style.width = 'wWidth';
     homeEl.style.top = '110px';
 });
@@ -6965,6 +6966,7 @@ function personalText1() {
     answerEl.style.display = "none";   
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'none';
+    p11TextEl.style.display = 'none';
     p137TextEl.style.display = 'block';
 }
 
@@ -6975,6 +6977,7 @@ function personalText2() {
     answerEl.style.display = "none";
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'none';
+    p11TextEl.style.display = 'none';
     p137TextEl.style.display = 'none';
     p220TextEl.style.display = 'block';
 }
@@ -6986,9 +6989,20 @@ function personalText3() {
     answerEl.style.display = "none";   
     homeEl.style.display = 'block';
     homeTextEl.style.display = 'none';
+    p11TextEl.style.display = 'none';
     p137TextEl.style.display = 'none';
     p220TextEl.style.display = 'none';
     p1051TextEl.style.display = 'block';
+}
+
+function personalText4() {
+    window.scrollTo(0, 0);
+    shemaEl.style.display = 'none';
+    searchWrapperEl.style.display ='none'; 
+    answerEl.style.display = "none";   
+    homeEl.style.display = 'block';
+    homeTextEl.style.display = 'none';
+    p11TextEl.style.display = 'block';
 }
 
 const img_title1El = document.getElementById("img_title1");

@@ -325,7 +325,7 @@ li {
     background-size: 100vw;
 }
 
-#p1051Text, #p137Text, #p220Text {
+#p1051Text, #p137Text, #p220Text, #p11Text {
    position: relative;
    padding: 30px 8%; 
    font-size: 20px;
@@ -339,7 +339,16 @@ h2 {
     margin: 20px;
 }
 
-#prs1051:hover, #prs137:hover, #prs220:hover {    
+#articles {
+    font-weight: 500;
+}
+
+#articles:hover {
+    color: wheat;
+    background-color: darkblue;
+}
+
+#prs1051:hover, #prs137:hover, #prs220:hover #prs11:hover {    
     background-color: #eef;
     color: #112;
     cursor: pointer;
