@@ -374,6 +374,15 @@ h2 {
     color: darkblue;
 }
 
+#mason{
+    color: #aaf;
+}
+
+#mason:hover{
+    color: darkblue;
+    background-color: #aab; 
+}
+
 .nazad {
     position: relative;
     width: 20%;
