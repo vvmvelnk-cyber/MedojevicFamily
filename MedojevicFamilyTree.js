@@ -6656,10 +6656,12 @@ function draggable(el) {
 
 const searchInput1 = document.getElementById("search-input1");
 const searchInput2 = document.getElementById("search-input2");
+const searchInput3 = document.getElementById("search-input3");
 let answerEl = document.getElementById("answer");
 let foundPersons = [];
 let foundPersons1 = [];
 let foundPersons2 = [];
+let foundPersons3 = [];
 
 const wWidth = window.innerWidth;
 const wHeight = window.innerHeight;
@@ -6706,19 +6708,40 @@ searchInput2.addEventListener("keyup", en => {
     foundPerson();
 });
 
+searchInput3.addEventListener("keyup", en => {
+    foundPersons3 = [];
+    let value3 = en.target.value.toLowerCase();
+    if (searchInput3.value.length > 1) {
+        for (let i = 0; i < aPs.length; i++) {
+            if (aPs[i][4]===0 && aPs[i][2].toLowerCase().includes(value3) && 
+                aPs[i][2].toLowerCase().charAt(0) === value3.charAt(0) && 
+                aPs[i][2].toLowerCase().charAt(1) === value3.charAt(1)) {
+                const k = i+1;
+                for(let j = k; j < aPs.length; j++) {
+                    if (aPs[i][0]===aPs[j][8]) {
+                        foundPersons3.push(j);
+                    }                    
+                }                
+            }
+        }        
+    }
+    foundPerson();
+});
+
 function foundPerson() {
     backgroundLighting = []; xTarr = []; yTarr = [];
     foundPersons = [];
     answerEl.style.display = "none";
     t = 0;
-    if (foundPersons1.length === 0 && foundPersons2.length === 0 && (searchInput1.value.length > 1 
-            || searchInput2.value.length > 1)) {
+    if (foundPersons1.length === 0 && foundPersons2.length === 0 && foundPersons3.length === 0 
+            && (searchInput1.value.length > 1 || searchInput2.value.length > 1 
+            || searchInput3.value.length > 1)) {
         answerEl.style.display = "block";
-        answerEl.textContent = "Ne postoji osoba sa unešenim imenom / prezimenom.";
+        answerEl.textContent = "Ne postoji osoba sa unešenim podacima.";
         backgroundLighting = [];
         xTarr = []; yTarr = [];
     } else {
-        if (foundPersons1.length > 0 && searchInput2.value === "") {
+        if (foundPersons1.length > 0 && searchInput2.value === "" && searchInput3.value === "") {
             answerEl.style.display = "block";
             for (let j = 0; j<foundPersons1.length; j++) {
                 let n = foundPersons1[j];
@@ -6735,7 +6758,7 @@ function foundPerson() {
                     foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]);
                 }
             } 
-        } else if (searchInput1.value === "" && foundPersons2.length > 0) {
+        } else if (searchInput1.value === "" && foundPersons2.length > 0 && searchInput3.value === "" ) {
             answerEl.style.display = "block";
             foundPersons = [];
             for (let j = 0; j<foundPersons2.length; j++) {
@@ -6751,7 +6774,18 @@ function foundPerson() {
                     foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]);
                 } 
             }
-        } else if (foundPersons1.length > 0 && foundPersons2.length > 0) {
+        } else if (searchInput1.value === "" && searchInput2.value === ""  && foundPersons3.length > 0) {
+            answerEl.style.display = "block";
+            foundPersons = [];
+            for (let j = 0; j<foundPersons3.length; j++) {
+                let n = foundPersons3[j];
+                backgroundLighting.push(aPs[n][0]);
+                xTarr.push(wWidth/2 - aPs[n][5]);
+                yTarr.push(wHeight/2 - aPs[n][6]);                
+                foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
+                     + findFatherName(n) + ")");                 
+            }
+        } else if (foundPersons1.length > 0 && foundPersons2.length > 0 && searchInput3.value === "") {
             for (let j = 0; j < foundPersons1.length; j++) {
                 for (let k = 0; k < foundPersons2.length; k++) {
                     if (foundPersons1[j] === foundPersons2[k]) {
@@ -6772,7 +6806,24 @@ function foundPerson() {
                     }
                 }
             }
-        }             
+        } else if (foundPersons1.length > 0 && foundPersons3.length > 0 && 
+                (foundPersons2.length > 0 || searchInput2.value === "")) {
+            for (let j = 0; j < foundPersons1.length; j++) {
+                for (let k = 0; k < foundPersons3.length; k++) {
+                    if (foundPersons1[j] === foundPersons3[k]) {
+                        answerEl.style.display = "block";
+                        let n = foundPersons1[j];
+                        backgroundLighting.push(aPs[n][0]);
+                        xTarr.push(wWidth/2 - aPs[n][5]);
+                        yTarr.push(wHeight/2 - aPs[n][6]);
+                        
+                            foundPersons.push(" " + aPs[n][2] + " " + aPs[n][3]  + " " + "(otac: " 
+                                + findFatherName(n) + ")"); 
+                         
+                    }
+                }
+            }
+        }            
             answerEl.textContent = "NAĐENO:" + foundPersons;            
         }
         labelsDesign();
