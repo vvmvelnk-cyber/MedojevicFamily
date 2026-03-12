@@ -196,7 +196,7 @@ hr {
     color: white;
 }
 
-#text, #address {
+#address {
     padding: 8px 15px;
     margin-top: 15px;
     border: 2px solid darkblue;
@@ -223,7 +223,7 @@ hr {
     border-radius: 5px;
 }
 
-#cancel, #cancel2 {
+#cancel2 {
     width: 24px;
     height: 24px;
     margin-bottom: 5px;
@@ -233,7 +233,7 @@ hr {
     background: transparent;
 }
 
-#cancel:hover, #cancel2:hover {
+#cancel2:hover {
     background-color: darkblue;
     color: white;
 }

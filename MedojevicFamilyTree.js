@@ -6925,8 +6925,7 @@ const addressEl = document.getElementById("address");
 
 homeButtEl.addEventListener('click', () => {
     //scaleEl.style.display ='none'; 
-    window.scrollTo(0, 0);   
-    textEl.style.display = 'none';
+    window.scrollTo(0, 0);
     addressEl.style.display = 'none';
     shemaEl.style.display ='none';
     searchWrapperEl.style.display ='none';
@@ -6939,16 +6938,12 @@ homeButtEl.addEventListener('click', () => {
 
 nButtonEl.addEventListener('click', () => {
     homeEl.style.display = 'none';
-    textEl.style.display = 'block';
     searchWrapperEl.style.display ='block';
     if (foundPersons.length > 0) {
         answerEl.style.display = "block";
     }    
     shemaEl.style.display ='block';
     addressEl.style.display = 'none';
-});
-cancelEl.addEventListener('click', () => {
-    textEl.style.display = 'none';
 });
 
 contactEl.addEventListener('click', () => {
@@ -6961,7 +6956,6 @@ contactEl.addEventListener('click', () => {
     }
     homeEl.style.display = 'none';
     shemaEl.style.display ='block';
-    textEl.style.display = 'none';
     //scaleEl.style.display ='block';
 });
 
