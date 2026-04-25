@@ -1,0 +1,486 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   background-color: rgba(190, 190, 250, .6);
+}
+
+#head {
+    height: 112px;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        90deg,
+        #888,
+        #eee,
+        #888
+      );
+    z-index: 2;
+    position: fixed;
+}
+
+.family {
+    width: 160px;
+    font-family: wester, 'sans-serif';
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: #eee;
+    border-bottom: 3px solid lightgray;
+    border-bottom-style: groove;
+    margin: 5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+}
+
+#title {
+    font-size: 40px;
+    margin-top: -5px;
+    text-align: center;
+    justify-content: center;
+    color: darkblue;
+}
+
+hr {
+  /*  display: block;
+  margin-top: 35px;*/
+  margin-bottom: 0.5em;
+  border-style: inset;
+  border-width: 1px;
+}
+
+#searchWrapper {
+    position: absolute;
+    width: 225px;
+    height: 160px;
+    top: 135px;
+    left: 20px;
+    position: fixed;
+    background-color: transparent;
+    z-index: 1;
+}
+
+#search-input1 {
+    width: 220px;
+    height: 28px;
+    font-size: 20px;
+    padding-left: 5px;
+    border: 2px solid #115;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#search-input2, #search-input3 {
+    width: 220px;
+    margin-top: 10px;
+    height: 28px;
+    font-size: 20px;
+    padding-left: 5px;
+    border: 2px solid #115;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#search-input1:hover, #search-input2:hover, #search-input3:hover {
+    background-color: white;
+}
+
+#next {
+    width: 170px;
+    height: 30px;
+    left: 40px;
+    top: 260px;
+    position: fixed;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    font-weight: 700;
+    color: black;
+    background-color: transparent;
+}
+
+#next:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#answer {
+    position: fixed;
+    top: 135px;
+    left: 240px;
+    margin: 0 30px;
+    padding: 5px;
+    border: 1px solid #113;
+    border-radius: 5px;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    text-align: justify;
+    background-color: #d8d8d8;
+    color: #113;
+    z-index: 1;
+    display: none;
+}
+
+#star_note {
+    position: fixed;
+    width: 600px;
+    bottom: 10px;
+    right: 50px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#shema {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 4000px;
+    height: 31500px;
+    cursor: move;
+    overflow: hidden;
+    overflow: auto;
+}
+
+.person {
+    position: absolute;
+    text-align: center;
+    border: 0.1px solid #bbb;
+    font-weight: bold;
+    color: white; 
+    background-color: darkblue;
+    cursor: pointer;
+}
+
+#myCanvas {
+    color: white;
+}
+
+#notes {
+    position: absolute;
+    right: 2vw;
+    top: 70px;
+    width: 440px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    position: fixed;
+    z-index: 2;
+}
+#rightButtons {
+    padding: 10px 0;
+    width: 400px;
+    justify-content: center;
+}
+.cButtons {
+    width: 110px;
+    padding: 3px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #ddd;
+    font-size: 16px;
+    font-weight: bold;
+    color: darkblue;
+    cursor: pointer;
+}
+
+.cButtons:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#nButton {
+    border: 3px solid darkblue;
+}
+
+#address {
+    padding: 8px 15px;
+    margin-top: 15px;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    display: none;
+    font-family: "Arial", sans-serif;
+    text-align: justify;
+    background-color: #ddd;
+    color: darkblue;
+}
+
+#address b {
+    margin-left: 35%;
+    font-size: 20px;
+}
+
+#address1 {
+    font-size: 18px;
+}
+
+#address1:hover, #address b:hover {
+    padding: 3px 6px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#cancel2 {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: transparent;
+}
+
+#cancel2:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+#home {
+    position: relative;
+    top: 90px;
+    margin-top: -10px;
+    width: 100vw;
+    margin-right: 0;
+    text-align: justify;
+    background: linear-gradient(
+        45deg,
+        #aaf,
+        #eef
+      );
+    font-size: 26px;
+    font-family: "Arial", sans-serif;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#homeText {
+    margin: 0px 8% 30px 8%;
+    color: #113;
+}
+
+#nextButt {
+    position: absolute;
+    top: 105px;
+    left: 8%;
+    font-size: 36px;
+    height: 40px;
+    width: 40px;
+    margin-left: 3px;
+    color: white;
+    background: transparent;
+    border-radius: 20px;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#nextButt:hover {
+    color: white;
+    background-color: darkblue;
+}
+
+#img_title1, #img_title2, #img_title3 {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    justify-items: center;
+}
+
+img {
+    margin-top: 20px;    
+}
+
+i {
+    position: relative;
+    font-size: 16px;
+}
+
+ul {
+    margin-left: 100px;
+}
+
+ol {
+    margin-left: 100px;
+}
+li {
+    margin-top: 5px;
+}
+
+.pLabel {
+    padding: 3px;
+    margin: 7px;
+    color: blue;
+    cursor: pointer;
+}
+
+.pLabel:hover {
+    background-color: #223;
+    color: #eef;
+}
+
+#personalData {
+    position: relative;
+    width: 100vw;
+    background-color: #115;
+    color: white;
+    font-family: "Arial", sans-serif;
+    background-size: 100vw;
+}
+
+#p1051Text, #p137Text, #p220Text, #p11Text {
+   position: relative;
+   padding: 30px 8%; 
+   font-size: 20px;
+   border-bottom: 2px solid white;
+}
+
+h2 { 
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+#branko_novakov_podaci, #articles, #jovo_podaci {
+    font-weight: 500;
+    color: #557;
+}
+
+#branko_novakov_podaci:hover, #articles:hover, #jovo_milev_podaci:hover {
+    color: wheat;
+    background-color: darkblue;
+}
+
+#prs1051:hover, #prs137:hover, #prs220:hover #prs11:hover {    
+    background-color: #eef;
+    color: #112;
+    cursor: pointer;
+}
+
+#uvuceno {
+    margin-left: 40px;
+}
+
+#napomena {
+    margin: 50px 0;
+    font-size: 18px;
+    font-style: italic;
+    color: black;
+}
+
+#godina {
+    position: absolute;
+    font-size: 40px;    
+    background-color: #eee;
+    padding: 0 10px;
+    border-radius: 15px;
+    color: darkblue;
+}
+
+#mason{
+    color: #aaf;
+}
+
+#mason:hover{
+    color: darkblue;
+    background-color: #aab; 
+}
+
+.nazad {
+    position: relative;
+    width: 20%;
+    padding: 3px ;
+    margin-top: 40px;
+    left: 40%;
+    background-color: #bbb;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nazad:hover {
+    background-color: orange;
+}
+
+#copyright {
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    color: black;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+#visits {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    background-color: #eee;
+    color: #999;
+}
+
+@media screen and (min-width: 400px) and (max-width: 900px) {
+    #head {
+        height: 105px;
+        margin-top: 0;
+    }
+    #title { 
+    font-size: 32px;
+    }
+   #notes {
+        top: 60px;
+    }
+}
+
+
+
+ button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+.triangle-btn {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 19px solid transparent;
+    border-top: 19px solid #2980c9;    /* Triangle color */
+    user-select: none;
+    transition: border-bottom-color 0.3s;
+  }
+
+  /* Hover effect */
+  .triangle-btn:hover, .triangle-btn2:hover {
+    border-color: #2980f9;
+  }
+  
+  .triangle-btn2 {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 19px solid transparent;
+    border-bottom: 19px solid #2980c9;    /* Triangle color */
+    user-select: none;
+    transition: border-bottom-color 0.3s;
+  }
+  
+  /* Optional: focus outline for accessibility */
+  .triangle-btn:focus, .triangle-btn2:focus {
+    outline: 2px solid #555;
+    outline-offset: 4px;
+  }
+  
