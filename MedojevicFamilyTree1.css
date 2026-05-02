@@ -289,12 +289,11 @@ hr {
 
 #img_title1, #img_title2, #img_title3 {
     display: flex;
-    margin: 5px;
     justify-items: center;
 }
 
 img {
-    margin-top: 35px;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
 }
