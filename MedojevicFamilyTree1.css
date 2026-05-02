@@ -247,7 +247,7 @@ hr {
     top: 90px;
     margin-top: -10px;
     width: 100vw;
-    margin-right: 0;
+    align-items: center;
     text-align: justify;
     background: linear-gradient(
         45deg,
@@ -289,13 +289,14 @@ hr {
 
 #img_title1, #img_title2, #img_title3 {
     display: flex;
-    margin: 20px 0;
-    align-items: center;
+    margin: 5px;
     justify-items: center;
 }
 
 img {
-    margin-top: 20px;    
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 i {
@@ -483,4 +484,4 @@ h2 {
     outline: 2px solid #555;
     outline-offset: 4px;
   }
-  
+
